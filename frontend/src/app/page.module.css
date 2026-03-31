@@ -1,0 +1,46 @@
+/* page.module.css */
+.main {
+  position: fixed;
+  inset: 0;
+  background: #0a0a0a;
+  overflow: hidden;
+}
+
+.mapContainer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.mapLoader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  color: rgba(249,115,22,0.5);
+}
+
+.searchOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  gap: 12px;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(4px);
+}
+
+.offlineReady {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.25);
+  margin: 0;
+}

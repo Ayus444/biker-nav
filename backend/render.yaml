@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: biker-nav-backend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: ROUTING_ENGINE
+        value: osrm
+      - key: FRONTEND_URL
+        sync: false
+      - key: OSRM_URL
+        value: https://router.project-osrm.org
+    healthCheckPath: /health
+    autoDeploy: true

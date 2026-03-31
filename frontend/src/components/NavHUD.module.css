@@ -1,0 +1,265 @@
+/* NavHUD.module.css */
+
+/* Alert Banners */
+.alertBanner, .offRouteBanner {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 30;
+  text-align: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  padding: 14px;
+  animation: flashIn 0.3s ease;
+}
+
+.alertBanner {
+  background: rgba(239, 68, 68, 0.95);
+  color: #fff;
+}
+
+.offRouteBanner {
+  background: rgba(234, 179, 8, 0.92);
+  color: #000;
+}
+
+@keyframes flashIn {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Turn Card */
+.turnCard {
+  position: absolute;
+  top: 20px; left: 16px; right: 16px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(10, 10, 10, 0.92);
+  border: 1px solid rgba(249,115,22,0.3);
+  border-radius: 16px;
+  padding: 16px 18px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(249,115,22,0.1);
+}
+
+.turnInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.distBig {
+  font-family: 'Space Mono', monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #F97316;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.streetName {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 1px;
+}
+
+.speakBtn {
+  background: rgba(249,115,22,0.12);
+  border: 1px solid rgba(249,115,22,0.25);
+  border-radius: 10px;
+  color: #F97316;
+  font-size: 1.2rem;
+  padding: 10px 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.speakBtn:hover { background: rgba(249,115,22,0.25); }
+
+/* Next Step */
+.nextCard {
+  position: absolute;
+  top: 130px; left: 16px; right: 16px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(10,10,10,0.75);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 10px 14px;
+  backdrop-filter: blur(10px);
+}
+
+.nextLabel {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.35);
+}
+
+.nextStreet {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.5);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Bottom Bar */
+.bottomBar {
+  position: absolute;
+  bottom: 24px; left: 16px; right: 16px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: rgba(10,10,10,0.92);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 14px 16px;
+  backdrop-filter: blur(16px);
+}
+
+.stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  border-right: 1px solid rgba(255,255,255,0.07);
+  padding: 0 8px;
+}
+.stat:last-of-type { border-right: none; }
+
+.statVal {
+  font-family: 'Space Mono', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+
+.statLbl {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.3);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 8px;
+}
+
+.offlineBadge {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 2px;
+  background: rgba(234,179,8,0.2);
+  color: #eab308;
+  border: 1px solid rgba(234,179,8,0.4);
+  border-radius: 5px;
+  padding: 3px 6px;
+}
+
+.focusBtn {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: rgba(255,255,255,0.5);
+  font-size: 1rem;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.focusBtn:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+
+.resetBtn2 {
+  background: rgba(239,68,68,0.12);
+  border: 1px solid rgba(239,68,68,0.25);
+  border-radius: 8px;
+  color: #ef4444;
+  font-size: 0.9rem;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.resetBtn2:hover { background: rgba(239,68,68,0.25); }
+
+/* Focus mode */
+.focusBar {
+  position: absolute;
+  bottom: 24px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+}
+
+.focusBtnFull {
+  background: rgba(10,10,10,0.7);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 20px;
+  color: rgba(255,255,255,0.4);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+/* Arrived */
+.arrivedOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+}
+
+.arrivedIcon {
+  font-size: 4rem;
+  color: #F97316;
+  animation: pulse 1.5s infinite;
+}
+
+.arrivedText {
+  font-family: 'Space Mono', monospace;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 8px;
+  color: #F97316;
+}
+
+.resetBtn {
+  background: none;
+  border: 2px solid #F97316;
+  border-radius: 10px;
+  color: #F97316;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  padding: 12px 28px;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: all 0.2s;
+}
+.resetBtn:hover { background: rgba(249,115,22,0.12); }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(0.9); }
+}
